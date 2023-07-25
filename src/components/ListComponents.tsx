@@ -39,18 +39,6 @@ const ListComponent: React.FC = () => {
     }
   };
 
-  const handleCheckAll = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { checked } = event.target;
-    const allCheckedItems: Record<string, boolean> = {};
-    departmentsData.forEach((dept) => {
-      allCheckedItems[dept.department] = checked;
-      dept.sub_departments.forEach((subDept) => {
-        allCheckedItems[subDept] = checked;
-      });
-    });
-    setCheckedItems(allCheckedItems);
-  };
-
   return (
     <div>
       <ul>
